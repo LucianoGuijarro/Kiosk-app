@@ -9,7 +9,7 @@ const ShopNavigator = () => {
         <Stack.Screen name="Products" component={Products} />
         <Stack.Screen name="ProductsDetails" component={ProductsDetails} 
         options={{
-            title: 'holaaa',
+            title: 'Products details',
         }}
         />
     </Stack.Navigator>

@@ -1,7 +1,7 @@
 import { View, ActivityIndicator } from 'react-native';
 import { styles } from './styles';
 import { useFonts } from 'expo-font';
-import AppNavigator from './navigation';
+import AppNavigator from './navigation/Index';
 
 export default function App() {
   const [ loader ] = useFonts({
