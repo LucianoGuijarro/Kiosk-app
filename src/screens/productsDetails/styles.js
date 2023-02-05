@@ -10,6 +10,6 @@ export const styles = StyleSheet.create({
     title: {
         fontFamily: 'KalamRegular',
         fontSize: fontSize.medium,
-        color: colors.primary
+        color: colors.black,
     }
 })
