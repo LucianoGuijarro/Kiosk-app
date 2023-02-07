@@ -1,32 +1,37 @@
 export const CATEGORIES = [
     {
       id: 1,
-      title: 'Harinas Puras',
+      title: 'Bebidas',
       color: '#78CDD7',
     },
     {
       id: 2,
-      title: 'Harinas Integrales',
+      title: 'Lacteos',
       color: '#44A1A0',
     },
     {
       id: 3,
-      title: 'Harinas de Trigo',
+      title: 'Panaderia',
       color: '#0D5C63',
     },
     {
       id: 4,
-      title: 'Harinas de Maíz',
+      title: 'Pastas',
       color: '#247B7B',
     },
     {
       id: 5,
-      title: 'Harinas de Centeno',
+      title: 'Golosinas',
       color: '#17A7B5',
     },
     {
       id: 6,
-      title: 'Harinas de Cebada',
+      title: 'Snacks',
+      color: '#2A6564',
+    },
+    {
+      id: 7,
+      title: 'Snacks',
       color: '#2A6564',
     },
   ];

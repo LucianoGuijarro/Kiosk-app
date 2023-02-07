@@ -2,17 +2,26 @@ export const PRODUCTS = [
     {
       id: 1,
       categoryId: 1,
-      title: 'Pan de yema',
-      description: 'clasico y delicioso pan de yema',
-      weight: '60gr',
-      price: 1.0,
+      title: 'Coca cola',
+      description: 'Coca cola clasica de 1L',
+      weight: '1L',
+      price: 0.99,
+      image: 'https://img1.freepng.es/20180328/vre/kisspng-fizzy-drinks-pepsi-max-pepsi-one-cola-pepsi-5abbe126caaea1.7431194715222623108302.jpg'
+    },
+    {
+      id: 10,
+      categoryId: 1,
+      title: 'Pepsi',
+      description: 'Pepsi comun de 1.5L',
+      weight: '1.5L',
+      price: 1.29,
     },
     {
       id: 2,
       categoryId: 1,
-      title: 'Pan frances',
-      description: 'clasico y tierno pan frances',
-      weight: '80gr',
+      title: 'Speed',
+      description: 'Speed clasico de 500ml',
+      weight: '500ml',
       price: 1.5,
     },
     {

@@ -13,5 +13,8 @@ export const styles = StyleSheet.create({
     },
     containerList: {
         flex: 1
+    },
+    contentContainerList: {
+        paddingBottom: 10
     }
 })

@@ -7,9 +7,11 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    imageContainer: {},
     title: {
-        fontFamily: 'KalamRegular',
-        fontSize: fontSize.medium,
+        fontFamily: 'KalamBold',
+        fontSize: fontSize.xlarge,
         color: colors.black,
+        marginBottom: 20
     }
 })

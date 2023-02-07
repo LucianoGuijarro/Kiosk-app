@@ -1,7 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Category, Products, ProductsDetails } from '../screens/index';
 import { colors } from '../constant/index'
-import { View } from "react-native";
 
 const Stack = createNativeStackNavigator();
 

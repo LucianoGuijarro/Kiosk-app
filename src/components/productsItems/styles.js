@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { fontSize } from '../../constant/index';
+import { fontSize, colors } from '../../constant/index';
 
 export const styles = StyleSheet.create({
     container: {
@@ -8,25 +8,40 @@ export const styles = StyleSheet.create({
         marginVertical: 10
     },
     contentContainer: {
-        backgroundColor: 'green',
-        height: 150,
+        width: 115,
+        backgroundColor: colors.background,
+        height: 180,
         padding: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+
+        elevation: 6,
     },
     containerPrice: {
         flexDirection: 'row',
         justifyContent: 'space-around'
     },
-    iamge: {
-        fontFamily: 'KalamBold',
-        fontSize: fontSize.medium
+    ImageContainer: {
+        alignItems: 'center'
+    },
+    image: {
+        height: 100,
+        width: 50,
     },
     price: {
-        fontFamily: 'KalamRegular'
+        fontFamily: 'KalamRegular',
     },
     title: {
         fontFamily: 'KalamBold',
-        fontSize: fontSize.small
+        fontSize: fontSize.medium,
+        textAlign: 'center',
+        marginBottom: 5
     },
     weight: {
         fontFamily: 'KalamRegular'
