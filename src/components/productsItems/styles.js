@@ -11,7 +11,6 @@ export const styles = StyleSheet.create({
         width: 115,
         backgroundColor: colors.background,
         height: 180,
-        padding: 10,
         borderRadius: 10,
         shadowColor: "#000",
         shadowOffset: {
@@ -25,7 +24,7 @@ export const styles = StyleSheet.create({
     },
     containerPrice: {
         flexDirection: 'row',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
     },
     ImageContainer: {
         alignItems: 'center'

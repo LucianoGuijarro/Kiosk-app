@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Category, Products, ProductsDetails } from '../screens/index';
-import { colors } from '../constant/index'
+import { colors, fontSize } from '../constant/index'
 
 const Stack = createNativeStackNavigator();
 
@@ -10,6 +10,7 @@ const ShopNavigator = () => {
             options={{
                 headerTitleStyle: {
                     fontFamily: 'KalamBold',
+                    fontSize: fontSize.xxlarge
                 },
                 headerTitleAlign: 'center',
                 headerTintColor: colors.primary,
@@ -19,7 +20,8 @@ const ShopNavigator = () => {
             options={({ route }) => ({
                 title: route.params.title,
                 headerTitleStyle: {
-                    fontFamily: 'KalamBold'
+                    fontFamily: 'KalamBold',
+                    fontSize: fontSize.xxlarge
                 },
                 headerTitleAlign: 'center',
                 headerTintColor: colors.primary
@@ -30,9 +32,10 @@ const ShopNavigator = () => {
                 title: route.params.title,
                 headerTitleStyle: {
                     fontFamily: 'KalamBold',
+                    fontSize: fontSize.xxlarge,
                 },
                 headerTitleAlign: 'center',
-                headerTintColor: colors.primary
+                headerTintColor: colors.primary,
             })
             }
         />
