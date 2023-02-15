@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     },
     contentList: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: colors.background
     },
     footer: {
         borderWidth: .5,
@@ -42,5 +42,16 @@ export const styles = StyleSheet.create({
     totalPrice: {
         fontFamily: 'KalamBold',
         fontSize: fontSize.large,
-    }
+    },
+    header: {
+        flex: 1,
+        backgroundColor: colors.background,
+        margin: 20,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    headerTitle: {
+        fontSize: fontSize.xlarge,
+        fontFamily: 'KalamBold'
+    },
 })
