@@ -26,7 +26,6 @@ export const confirmOrder = (items, total) => {
                     total,
                 })
             });
-
             const result = await response.json();
             dispatch({
                 type: CONFIRM_ORDER,

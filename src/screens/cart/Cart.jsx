@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { removeFromCart, confirmOrder } from '../../store/actions/index'
