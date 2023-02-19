@@ -1,1 +1,1 @@
-export const REALTIME_DATABASE_URL = '';
+export const REALTIME_DATABASE_URL = ''
