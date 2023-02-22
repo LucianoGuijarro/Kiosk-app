@@ -16,7 +16,9 @@ export const styles = StyleSheet.create({
         maxWidth: 400,
         backgroundColor: colors.white,
         justifyContent: 'center',
-        borderRadius: 15
+        borderWidth: 1,
+        borderColor: colors.secondary,
+        borderRadius: 15,
     },
     title: {
         fontSize: fontSize.xxlarge,
