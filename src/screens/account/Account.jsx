@@ -4,6 +4,7 @@ import { styles } from './styles';
 import { colors } from '../../constant/index';
 import { useDispatch } from 'react-redux';
 import { signIn, register } from '../../store/actions/index';
+import { Input } from '../../components/index';
 const Account = () => {
     const dispatch = useDispatch();
     const [isLogin, setIsLogin] = useState(true);
@@ -14,25 +15,24 @@ const Account = () => {
     const massage = isLogin ? `You don't have account?` : 'Already have an account?';
     const textButton = isLogin ? 'Register!' : 'Login';
     const onHandleSubmit = () => {
-        dispatch( isLogin ? signIn(email, password) : register(email, password))
+        dispatch(isLogin ? signIn(email, password) : register(email, password))
     }
     return (
         <KeyboardAvoidingView style={styles.keyboardContainer}>
             <View style={styles.container} >
                 <View style={styles.contentContainer}>
                     <Text style={styles.title}>{title}</Text>
-                    <Text style={styles.label}>Email</Text>
-                    <TextInput
-                        style={styles.input}
+                    <Input
+                        label='Email'
                         placeholder='enter your email'
                         autoCapitalize='none'
                         autoCorrect={false}
                         onChangeText={(text) => setEmail(text)}
                         value={email}
+                        error='email invalid'
                     />
-                    <Text style={styles.label}>Password</Text>
-                    <TextInput
-                        style={styles.input}
+                    <Input
+                        label='Password'
                         placeholder='enter your password'
                         autoCapitalize='none'
                         autoCorrect={false}

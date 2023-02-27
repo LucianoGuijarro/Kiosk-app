@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: colors.secondary,
         borderRadius: 15,
+        minHeight: 330,
     },
     title: {
         fontSize: fontSize.xxlarge,
@@ -29,17 +30,8 @@ export const styles = StyleSheet.create({
     },
     label: {
         marginHorizontal: 20,
-        marginBottom: 5,
         fontFamily: 'KalamRegular',
         fontSize: fontSize.large
-    },
-    input: {
-        marginHorizontal: 20,
-        marginBottom: 15,
-        borderBottomColor: colors.secondary,
-        borderBottomWidth: 1,
-        fontSize: fontSize.medium,
-        fontFamily: 'KalamRegular',
     },
     containerButton: {
         marginHorizontal: 20,
