@@ -11,12 +11,14 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.background
     },
     footer: {
-        borderWidth: .5,
-        borderRadius: 5,
-        paddingVertical: 10,
-        marginBottom: 10,
-        marginHorizontal: 1,
-        backgroundColor: colors.secondary
+        borderTopColor: colors.black,
+        borderTopWidth: 1,
+        paddingTop: 10,
+        backgroundColor: colors.white,
+    },
+    containerButton: {
+        marginHorizontal: 10,
+        marginBottom: 20
     },
     button: {
         flexDirection: 'row',
@@ -30,14 +32,14 @@ export const styles = StyleSheet.create({
         fontSize: fontSize.large
     },
     containerTotal: {
-        flex: 0.4,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center'
+        marginHorizontal: 25,
+        marginBottom: 5,
     },
     total: {
         fontFamily: 'KalamRegular',
-        fontSize: fontSize.medium
+        fontSize: fontSize.large
     },
     totalPrice: {
         fontFamily: 'KalamBold',
