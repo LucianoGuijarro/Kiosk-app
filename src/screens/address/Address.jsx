@@ -1,14 +1,17 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
+import { LocationSelector } from '../../components/index';
 import { styles } from './styles';
 
 const Address = () => {
+  const onLocation = (location) => {
+    console.warn(location)
+  };
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
         <Text style={styles.title}>Shipping Address</Text>
-        <View style={styles.contentContainer}>
-        </View>
-    </View>
+        <LocationSelector onLocation={onLocation}/>
+    </ScrollView>
   )
 }
 

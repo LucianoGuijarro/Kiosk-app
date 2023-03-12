@@ -1,7 +1,13 @@
 import { StyleSheet } from "react-native";
-
+import { colors, fontSize } from '../../constant/index';
 export const styles = StyleSheet.create({
     container: {
-        flex: 1
-    }
+        flex: 1,
+    },
+    title: {
+        fontSize: fontSize.xlarge,
+        textAlign: 'center',
+        fontFamily: 'KalamBold',
+        marginVertical: 10,
+    },
 });
