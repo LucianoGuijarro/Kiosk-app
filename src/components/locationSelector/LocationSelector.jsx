@@ -3,7 +3,8 @@ import { Alert, Button, Text, View } from 'react-native';
 import { styles } from './styles';
 import { colors } from '../../constant/index';
 import * as Location from 'expo-location';
-const LocationSelector = ({ onLocation }) => {
+import { MapPreview } from '../index';
+const LocationSelector = ({ onLocation, addAdress }) => {
     const [pickerLocation, setPickerLocation] = useState(null);
     const verifyPermissions = async () => {
         const { status } = await Location.requestForegroundPermissionsAsync();
@@ -15,33 +16,29 @@ const LocationSelector = ({ onLocation }) => {
     }
     const onHandleLocation = async () => {
         const hasPermission = await verifyPermissions();
-        if(!hasPermission) return;
+        if (!hasPermission) return;
         const location = await Location.getCurrentPositionAsync({
             timeout: 5000,
         });
 
-        const { latitude, longitude  } = location.coords;
+        const { latitude, longitude } = location.coords;
         setPickerLocation({ lat: latitude, lng: longitude });
         onLocation({ lat: latitude, lng: longitude });
+        addAdress({ lat: latitude, lng: longitude });
     };
-  return (
-    <View style={styles.container}>
-        <View style={styles.preview}>
-            {
-                !pickerLocation ? (
-                    <Text style={styles.text}>You haven't selected any address yet</Text>
-                ) : (
-                    <Text style={styles.text}>{`Latitude: ${pickerLocation.lat}, Longitude: ${pickerLocation.lng}`}</Text>
-                )
-            }
+    return (
+        <View style={styles.container}>
+            <MapPreview location={pickerLocation} style={styles.preview}>
+                <Text style={styles.text}>You haven't selected any address yet</Text>
+            </MapPreview>
+            <Button
+                title='Selected location'
+                onPress={onHandleLocation}
+                color={colors.primary}
+            />
         </View>
-        <Button 
-        title='Selected location'
-        onPress={onHandleLocation}
-        color={colors.primary}
-        />
-    </View>
-  )
+    )
 }
 
 export default LocationSelector
+

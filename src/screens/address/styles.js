@@ -8,6 +8,6 @@ export const styles = StyleSheet.create({
         fontSize: fontSize.xlarge,
         textAlign: 'center',
         fontFamily: 'KalamBold',
-        marginVertical: 10,
+        marginTop: 20,
     },
 });
