@@ -8,9 +8,10 @@ import { colors } from '../../constant';
 const OrderItems = ({ item, onDelete }) => {
     return (
         <View style={styles.container} >
-            <View>
+            <View style={styles.detailContainer}>
                 <Text style={styles.date}>{formaDate(item.date)}</Text>
                 <Text style={styles.total}>${item.total}</Text>
+                <Text>{item.address}</Text>
             </View>
             <View>
                 <TouchableOpacity onPress={() => onDelete(item.id)}>

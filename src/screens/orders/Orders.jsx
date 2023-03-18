@@ -14,7 +14,6 @@ const Orders = () => {
       dispatch(getOrders())
     }, [dispatch])
   )
-
   const onDelete = (id) => {
     dispatch(deleteOrder(id))
   }

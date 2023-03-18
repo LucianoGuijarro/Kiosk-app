@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { colors, fontSize } from "../constant";
-import { Cart, Address } from "../screens";
+import { Cart, Address, Maps } from "../screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +26,9 @@ const CartNavigator = () => {
                         fontSize: fontSize.xxlarge
                     },
                 }}
+            />
+            <Stack.Screen name='Maps' component={Maps}
+            
             />
         </Stack.Navigator>
     )

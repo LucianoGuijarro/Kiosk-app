@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Alert, Button, Text, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { styles } from './styles';
 import { colors } from '../../constant/index';
 import * as Location from 'expo-location';
 import { MapPreview } from '../index';
 const LocationSelector = ({ onLocation, addAdress }) => {
+    const navigation = useNavigation();
     const [pickerLocation, setPickerLocation] = useState(null);
     const verifyPermissions = async () => {
         const { status } = await Location.requestForegroundPermissionsAsync();
@@ -26,14 +28,25 @@ const LocationSelector = ({ onLocation, addAdress }) => {
         onLocation({ lat: latitude, lng: longitude });
         addAdress({ lat: latitude, lng: longitude });
     };
+    const onHandleMapsLocation = async () => {
+        await onHandleLocation();
+        navigation.navigate('Maps', { coords: pickerLocation})
+    }
     return (
         <View style={styles.container}>
             <MapPreview location={pickerLocation} style={styles.preview}>
                 <Text style={styles.text}>You haven't selected any address yet</Text>
             </MapPreview>
+            <View style={styles.containerButton}>
+                <Button
+                    title='Selected location'
+                    onPress={onHandleLocation}
+                    color={colors.primary}
+                />
+            </View>
             <Button
-                title='Selected location'
-                onPress={onHandleLocation}
+                title='select from map'
+                onPress={onHandleMapsLocation}
                 color={colors.primary}
             />
         </View>

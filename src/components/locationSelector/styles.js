@@ -19,4 +19,7 @@ export const styles = StyleSheet.create({
         fontFamily: 'KalamRegular',
         fontSize: fontSize.medium,
     },
+    containerButton: {
+        marginBottom: 10,
+    },
 })

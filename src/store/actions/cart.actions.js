@@ -12,7 +12,7 @@ export const removeFromCart = (id) => ({
     id,
 })
 
-export const confirmOrder = (items, total) => {
+export const confirmOrder = (items, total, address) => {
     return async (dispatch) => {
         try {
             const response = fetch(`${REALTIME_DATABASE_URL}/ordes.json`, {
@@ -24,6 +24,7 @@ export const confirmOrder = (items, total) => {
                     date: Date.now(),
                     items,
                     total,
+                    address,
                 })
             });
             const result = await response.json();

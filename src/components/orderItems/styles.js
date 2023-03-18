@@ -22,4 +22,7 @@ export const styles = StyleSheet.create({
         fontFamily: 'KalamBold',
         fontSize: fontSize.medium
     },
+    detailContainer: {
+        width: '70%'
+    },
 })

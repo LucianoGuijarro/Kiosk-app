@@ -12,9 +12,6 @@ const Cart = ({ navigation }) => {
   const onDelete = (id) => {
     dispatch(removeFromCart(id))
   }
-  const onConfirmOrder = () => {
-    dispatch(confirmOrder(cart, total))
-  }
   const renderItem = ({ item }) => <CartItems item={item} onDelete={onDelete} />;
   const keyExtractor = (item) => item.id.toString();
   const Header = () =>
