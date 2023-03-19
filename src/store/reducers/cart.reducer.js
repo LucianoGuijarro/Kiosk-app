@@ -1,7 +1,7 @@
 import { cartType } from '../types/index';
 import { sumTotal } from '../../utils/index'
 
-const { ADD_TO_CART, CONFIRM_ORDER, REMOVE_TO_CART } = cartType;
+const { ADD_TO_CART, REMOVE_TO_CART, RESET_CART } = cartType;
 
 const initialState = {
     items: [],
@@ -35,7 +35,7 @@ const cartReducer = (state = initialState, action) => {
                 items: filteredCart,
                 total: sumTotal(filteredCart)
             }
-
+        case RESET_CART: return state
         default:
             return state
     }

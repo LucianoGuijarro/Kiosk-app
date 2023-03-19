@@ -5,6 +5,7 @@ const { REGISTER, SIGN_IN } = authType;
 const initialState = {
     token: null,
     userId: null,
+    email: null,
 };
 
 const authReducer = (state = initialState, action) => {

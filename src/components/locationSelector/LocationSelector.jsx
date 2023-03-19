@@ -16,7 +16,7 @@ const LocationSelector = ({ onLocation, addAdress }) => {
         }
         return true
     }
-    const onHandleLocation = async () => {
+    const onHandleLocation = async (isMaps = false ) => {
         const hasPermission = await verifyPermissions();
         if (!hasPermission) return;
         const location = await Location.getCurrentPositionAsync({
@@ -28,9 +28,20 @@ const LocationSelector = ({ onLocation, addAdress }) => {
         onLocation({ lat: latitude, lng: longitude });
         addAdress({ lat: latitude, lng: longitude });
     };
-    const onHandleMapsLocation = async () => {
-        await onHandleLocation();
-        navigation.navigate('Maps', { coords: pickerLocation})
+    const onHandleMapsLocation = async (isMaps = false) => {
+        const hasPermission = await verifyPermissions();
+        if (!hasPermission) return;
+        const location = await Location.getCurrentPositionAsync({
+            timeout: 5000,
+        });
+
+        const { latitude, longitude } = location.coords;
+        setPickerLocation({ lat: latitude, lng: longitude });
+        onLocation({ lat: latitude, lng: longitude });
+        addAdress({ lat: latitude, lng: longitude });
+        if(isMaps) {
+            navigation.navigate('Maps', {coords: { lat: latitude, lng: longitude }})
+        }
     }
     return (
         <View style={styles.container}>

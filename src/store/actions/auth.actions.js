@@ -22,6 +22,7 @@ export const signIn = (email, password) => {
                 type: SIGN_IN,
                 token: data.idToken,
                 userId: data.localId,
+                email: data.email,
             })
         } catch (error) {
             throw error

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Button, ScrollView, Text, View } from 'react-native';
+import { Alert, Button, ScrollView, Text, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { LocationSelector } from '../../components/index';
 import { colors } from '../../constant';
 import { URL_GEOCODING } from '../../utils';
 import { styles } from './styles';
-import { confirmOrder } from '../../store/actions';
-
+import { confirmOrder, resetCart } from '../../store/actions';
+import { useNavigation } from '@react-navigation/native';
 const Address = () => {
+  const navigation = useNavigation();
   const dispatch = useDispatch()
   const cart = useSelector((state) => state.cart.items)
   const total = useSelector((state) => state.cart.total)
@@ -32,8 +33,7 @@ const Address = () => {
     }
   }
   const onConfirmOrder = () => {
-    dispatch(confirmOrder(cart, total, address))
-
+    dispatch(confirmOrder(cart, total, address));
   }
   return (
     <ScrollView style={styles.container}>
@@ -54,7 +54,19 @@ const Address = () => {
               <Button
                 title='Confirm order'
                 color={colors.secondary}
-                onPress={onConfirmOrder}
+                onPress={() => Alert.alert('Confirm Order', 'you are sure to confirm the order?', [
+                  {
+                    text: 'Confirm Order',
+                    onPress: () => {
+                      onConfirmOrder()
+                      dispatch(resetCart)
+                      navigation.navigate('Category')
+                    }
+                  },
+                  {
+                    text: 'cancel',
+                  }
+                ])}
               />
             </View>
           </View>
