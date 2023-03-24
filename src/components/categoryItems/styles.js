@@ -5,7 +5,7 @@ import { CATEGORIES } from '../../constant/index';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 10,
+        marginTop: 25,
         marginHorizontal: 20,
         height: 100,
     },

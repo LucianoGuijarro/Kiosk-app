@@ -3,14 +3,14 @@ import { fontSize, colors } from '../../constant/index';
 
 export const styles = StyleSheet.create({
     container: {
-        width: '33%',
+        width: '50%',
         alignItems: 'center',
         marginVertical: 10
     },
     contentContainer: {
-        width: 115,
-        backgroundColor: colors.background,
-        height: 180,
+        width: '80%',
+        backgroundColor: colors.white,
+        height: 200,
         borderRadius: 10,
         shadowColor: "#000",
         shadowOffset: {
@@ -25,13 +25,15 @@ export const styles = StyleSheet.create({
     containerPrice: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        paddingTop: 5, 
     },
     ImageContainer: {
         alignItems: 'center'
     },
     image: {
-        height: 100,
-        width: 50,
+        marginTop: 10,
+        height: 105,
+        width: 85,
     },
     price: {
         fontFamily: 'KalamRegular',
@@ -40,7 +42,7 @@ export const styles = StyleSheet.create({
         fontFamily: 'KalamBold',
         fontSize: fontSize.medium,
         textAlign: 'center',
-        marginBottom: 5
+        marginBottom: 5,
     },
     weight: {
         fontFamily: 'KalamRegular'

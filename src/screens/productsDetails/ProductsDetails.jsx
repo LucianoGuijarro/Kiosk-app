@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Image, Text, View } from 'react-native';
 import { styles } from './styles';
 import { colors } from '../../constant/index';
 import { useSelector, useDispatch } from 'react-redux';
@@ -14,13 +14,20 @@ const ProductsDetails = ({ route }) => {
   }
   return (
     <View style={styles.container}>
-      <View style={styles.imageContainer}></View>
+
       <Text style={styles.title} >{product?.description}</Text>
-      <Button
-        title='Add to cart'
-        color={colors.primary}
-        onPress={onAddToCart}
-      />
+
+      <Image source={{ uri: product.image }} style={styles.image} />
+      <View style={styles.containerPrice}>
+        <Text style={styles.price}>${product.price}</Text>
+      </View>
+      <View style={styles.containerButton}>
+        <Button
+          title='Add to cart'
+          color={colors.primary}
+          onPress={onAddToCart}
+        />
+      </View>
     </View>
   )
 }

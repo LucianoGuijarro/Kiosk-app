@@ -10,6 +10,7 @@ import { useNavigation } from '@react-navigation/native';
 const Address = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch()
+  const email = useSelector((state) => state.auth.email)
   const cart = useSelector((state) => state.cart.items)
   const total = useSelector((state) => state.cart.total)
   const [coors, setCoors] = useState(null);
@@ -33,7 +34,7 @@ const Address = () => {
     }
   }
   const onConfirmOrder = () => {
-    dispatch(confirmOrder(cart, total, address));
+    dispatch(confirmOrder(cart, total, address, email));
   }
   return (
     <ScrollView style={styles.container}>

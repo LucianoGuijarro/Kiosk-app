@@ -17,6 +17,6 @@ export const styles = StyleSheet.create({
     message: {
         color: colors.primary,
         fontFamily: 'KalamRegular',
-        marginBottom: 5
+        marginTop: 15,
     }
 });

@@ -29,7 +29,7 @@ const Products = ({ navigation }) => {
       renderItem={renderItem}
       keyExtractor={keyExtractor}
       style={styles.contentList}
-      numColumns={3}
+      numColumns={2}
       />
     </SafeAreaView>
   )

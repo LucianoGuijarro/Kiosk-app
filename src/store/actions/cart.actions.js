@@ -16,7 +16,7 @@ export const resetCart = () => ({
     type: RESET_CART
 })
 
-export const confirmOrder = (items, total, address) => {
+export const confirmOrder = (items, total, address, email) => {
     return async (dispatch) => {
         try {
             const response = fetch(`${REALTIME_DATABASE_URL}/ordes.json`, {
@@ -29,6 +29,7 @@ export const confirmOrder = (items, total, address) => {
                     items,
                     total,
                     address,
+                    email,
                 })
             });
             const result = await response.json();

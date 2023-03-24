@@ -9,6 +9,8 @@ import { useFocusEffect } from '@react-navigation/native';
 const Orders = () => {
   const dispatch = useDispatch();
   const orders = useSelector((state) => state.orders.listOrders)
+  const email = useSelector((state) => state.auth.email)
+  const ordersFilter = orders.filter(order => order.email === email )
   useFocusEffect(
     useCallback(() => {
       dispatch(getOrders())
@@ -22,7 +24,7 @@ const Orders = () => {
   return (
     <View style={styles.container}>
       <FlatList
-        data={orders}
+        data={ordersFilter}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
       />

@@ -28,21 +28,6 @@ const LocationSelector = ({ onLocation, addAdress }) => {
         onLocation({ lat: latitude, lng: longitude });
         addAdress({ lat: latitude, lng: longitude });
     };
-    const onHandleMapsLocation = async (isMaps = false) => {
-        const hasPermission = await verifyPermissions();
-        if (!hasPermission) return;
-        const location = await Location.getCurrentPositionAsync({
-            timeout: 5000,
-        });
-
-        const { latitude, longitude } = location.coords;
-        setPickerLocation({ lat: latitude, lng: longitude });
-        onLocation({ lat: latitude, lng: longitude });
-        addAdress({ lat: latitude, lng: longitude });
-        if(isMaps) {
-            navigation.navigate('Maps', {coords: { lat: latitude, lng: longitude }})
-        }
-    }
     return (
         <View style={styles.container}>
             <MapPreview location={pickerLocation} style={styles.preview}>
@@ -55,11 +40,6 @@ const LocationSelector = ({ onLocation, addAdress }) => {
                     color={colors.primary}
                 />
             </View>
-            <Button
-                title='select from map'
-                onPress={onHandleMapsLocation}
-                color={colors.primary}
-            />
         </View>
     )
 }

@@ -1,5 +1,5 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Category, Products, ProductsDetails, Profile } from '../screens/index';
+import { Category, Products, ProductsDetails, Profile, Account } from '../screens/index';
 import { colors, fontSize } from '../constant/index';
 import { Ionicons } from '@expo/vector-icons';
 import { TouchableOpacity } from "react-native";
@@ -10,7 +10,7 @@ const Stack = createNativeStackNavigator();
 const ShopNavigator = () => {
     return <Stack.Navigator initialRouteName="Category">
         <Stack.Screen name="Category" component={Category}
-            options={({navigation}) => ({
+            options={({ navigation }) => ({
                 headerTitleStyle: {
                     fontFamily: 'KalamBold',
                     fontSize: fontSize.xxlarge
@@ -19,7 +19,7 @@ const ShopNavigator = () => {
                 headerTintColor: colors.primary,
                 headerRight: () => (
                     <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-                        <Ionicons name="people" size={28} color={colors.primary} style={{padding: 5}} />
+                        <Ionicons name="people" size={28} color={colors.primary} style={{ padding: 5 }} />
                     </TouchableOpacity>
                 )
             })}

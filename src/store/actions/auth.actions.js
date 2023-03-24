@@ -1,8 +1,11 @@
 import { URL_AUTH_REGISTER, URL_AUTH_SIGN_IN } from '../../constant/firebase';
 import { authType } from '../types/index';
 
-const { REGISTER, SIGN_IN } = authType;
-
+const { REGISTER, SIGN_IN, ADD_PICTURE } = authType;
+export const addPicture = (picture) => ({
+    type: ADD_PICTURE,
+    picture,
+})
 export const signIn = (email, password) => {
     return async (dispatch) => {
         try {
@@ -58,3 +61,4 @@ export const register = (email, password) => {
         }
     }
 };
+

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useId, useState } from 'react';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { colors } from '../../constant';
 import { PhotoModal } from '../../components/index';
