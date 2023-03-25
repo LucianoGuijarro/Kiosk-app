@@ -17,11 +17,13 @@ export const styles = StyleSheet.create({
     titleModal: {
         fontFamily: 'KalamBold',
         fontSize: fontSize.xxlarge,
-        margin: 20
+        margin: 20,
+        color: colors.secondary,
     },
     button: {
         borderWidth: 1,
         borderRadius: 50,
+        borderColor: colors.secondary,
         padding: 10,
     },
     contentButton: {
@@ -31,6 +33,7 @@ export const styles = StyleSheet.create({
         fontFamily: 'KalamRegular',
         marginTop: 5,
         fontSize: fontSize.large,
+        color: colors.secondary,
     },
     contentTitlte: {
         flexDirection: 'row',

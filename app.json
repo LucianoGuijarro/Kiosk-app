@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "kiosk-app",
+    "name": "TheBestStore",
     "slug": "kiosk-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,13 +21,33 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.TheBestStore",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "config": {
+        "googleMaps": "AIzaSyAoGXhmBk4AwFg3b-U1BFmaV1oYtbC4aMs"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "024d1e4e-08dc-46a4-84e5-6fad2415f4bc"
+      }
+    },
+    "production": {
+      "android": {
+        "buildType": "apk"
+      }
     }
   }
 }

@@ -1,7 +1,7 @@
 import React, { useId, useState } from 'react';
 import * as Permissions from 'expo-permissions';
 import * as ImagePicker from 'expo-image-picker';
-import { Button, Image, Text, TouchableOpacity, View } from 'react-native';
+import { Alert, Button, Image, Text, TouchableOpacity, View } from 'react-native';
 import { styles } from './styles';
 import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
@@ -21,6 +21,25 @@ const Profile = () => {
       return false
     }
     return true;
+  }
+  const verifyPermissionsGallery = async () => {
+    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync().catch((error) => console.log(error));
+    if (status !== "granted") {
+      Alert.alert('Permissions insufficient', 'You need to have permissions to use the camera.', [{ text: 'OK' }])
+      return false
+    }
+    return true
+  }
+  const onHandleGallery = async () => {
+    const hasPermissionGallery = await verifyPermissionsGallery().catch((error) => console.log(error));
+    if (!hasPermissionGallery) return;
+    const image = await ImagePicker.launchImageLibraryAsync({
+      allowsEditing: true,
+      aspect: [12, 7],
+      quality: 0.7,
+    }).catch((error) => console.log(error));
+    setPictureProfile(image.assets[0].uri);
+    setVisibleModal(!visibleModal)
   }
   const onHandleCamera = async () => {
     const hasPermissions = await verifyPermissions().catch((error) => console.log(error))
@@ -47,7 +66,7 @@ const Profile = () => {
         </View>
       </View>
       <Text style={styles.text}>{userEmail}</Text>
-      <PhotoModal visibleModal={visibleModal} onHandleModal={onHandleModal} onHandleCamera={onHandleCamera} />
+      <PhotoModal visibleModal={visibleModal} onHandleModal={onHandleModal} onHandleGallery={onHandleGallery} onHandleCamera={onHandleCamera} />
     </View>
   )
 }
